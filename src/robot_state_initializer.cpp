@@ -52,6 +52,11 @@ int main(int argc, char **argv) {
   std_msgs::Float64MultiArray command_msg;
   command_msg.data = panda_ready_state;
   joint_position_publisher.publish(command_msg);
+  ros::Duration(1.0).sleep();
+  joint_position_publisher.publish(command_msg);
+  ros::Duration(1.0).sleep();
+  joint_position_publisher.publish(command_msg);
+  ros::Duration(1.0).sleep();
 
   // sleep for 1 seconds in order to make sure that the controller finishes moving the robot
   ros::Duration(1.0).sleep();
